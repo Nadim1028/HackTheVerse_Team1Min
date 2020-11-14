@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1014836715081",
+    "firebase_url": "https://klon-36ac8.firebaseio.com",
+    "project_id": "klon-36ac8",
+    "storage_bucket": "klon-36ac8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014836715081:android:492cae30a65e676e63e998",
+        "android_client_info": {
+          "package_name": "com.example.team1min"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014836715081-fqq78hehlahu1njdu6fbir4559d03u6t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.team1min",
+            "certificate_hash": "b2bc8706f6f3841ce355fdf8ab1dc2c118d32d10"
+          }
+        },
+        {
+          "client_id": "1014836715081-6qk7b64q8lhb83ca0ohb4iephokgd849.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbw4Fr6nNF3ZBVDTVXA8JO7Hno7w37VUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014836715081-6qk7b64q8lhb83ca0ohb4iephokgd849.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
