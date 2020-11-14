@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.team1min">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/sme"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/sme"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ChatBox.ChatBox"></activity>
+        <activity android:name=".registration.SignInActivity" />
+        <activity android:name=".registration.SignUpActivity" />
+        <activity android:name=".starting.HomePageActivity" />
+        <activity android:name=".starting.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

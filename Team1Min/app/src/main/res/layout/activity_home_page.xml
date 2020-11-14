@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/border3"
+    tools:context=".starting.HomePageActivity">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Chat Box"
+            android:textAllCaps="false"
+            android:textColor="@color/Blue"
+            android:backgroundTint="@color/Beige"
+            android:onClick="goToChatBox"
+            />
+
+        <Button
+            android:layout_marginLeft="100dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Simulation"
+            android:textAllCaps="false"
+            android:textColor="@color/Blue"
+            android:backgroundTint="@color/Beige"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

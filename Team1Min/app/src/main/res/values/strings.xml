@@ -1,0 +1,208 @@
+<resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="accounts">Accounts</string>
+    <string name="description_add">Add Calendar</string>
+    <string name="summary">Title</string>
+    <string name="summary_hint">Enter the calendar title</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="icon_desc">Application icon</string>
+    <string name="title_separator_desc">Title separator</string>
+    <string name="refresh">Refresh</string>
+    <string name="batchadd">Copy Calendar x3 (Batch)</string>
+    <string name="edit">Edit Calendar</string>
+    <string name="delete">Delete Calendar</string>
+    <string name="delete_title">Delete Calendar?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="error">Error</string>
+    <string name="error_format">[Error] %s</string>
+
+    <string name="app_name">Smart-E-Labs</string>
+
+    <string name="facebook_app_id">1613946158787747</string>
+    <string name="fb_login_protocol_scheme">fb1613946158787747</string>
+
+
+    <string-array name="areaAddress_array">
+        <item><b>AREA</b></item>
+        <item>Dhaka</item>
+        <item>Chittagong</item>
+        <item>Rajsahi</item>
+        <item>Khulna</item>
+        <item>Barishal</item>
+        <item>Sylhet</item>
+        <item>Rangpur</item>
+        <item>Mymensingh</item>
+    </string-array>
+
+    <string-array name="currentPosition_array">
+        <item><b>CURRENT POSITION</b></item>
+        <item>College</item>
+        <item>Undergraduate</item>
+        <item>Graduate</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Edu_InstituteName_array">
+        <item><b>INSTITUTE</b></item>
+        <item>Dhaka University</item>
+        <item>Chittagong University</item>
+        <item>Rajsahi University</item>
+        <item>Khulna University</item>
+        <item>Barishal University</item>
+        <item>Sylhet University</item>
+        <item>Rangpur University</item>
+        <item>Mymensingh University</item>
+    </string-array>
+
+    <string-array name="Edu_tutorSubject_array">
+        <item><b>SUBJECT/DEPARTMENT</b></item>
+        <item>IIT</item>
+        <item>CSE</item>
+        <item>EEE</item>
+        <item>Microbiology</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Math</item>
+        <item>Botany</item>
+        <item>Software Engineering</item>
+    </string-array>
+
+    <string-array name="medium_array">
+        <item><b>MEDIUM</b></item>
+        <item>Bangla Medium</item>
+        <item>English Medium</item>
+        <item>Both</item>
+    </string-array>
+
+    <string-array name="gender_array">
+        <item><b>GENDER</b></item>
+        <item>MALE</item>
+        <item>FEMALE</item>
+    </string-array>
+
+    <string-array name="preferable_gender_array">
+        <item><b>GENDER</b></item>
+        <item>Both Male And Female</item>
+        <item>Only Male</item>
+        <item>Only Female</item>
+        <item>Male Tutor Preferable</item>
+        <item>Female Tutor Preferable</item>
+    </string-array>
+
+    <string-array name="preferredClass_array_bangla_medium">
+        <item><b>CLASS</b></item>
+        <item>INTER SECOND YEAR</item>
+        <item>INTER FIRST YEAR</item>
+        <item>CLASS 10</item>
+        <item>CLASS 9</item>
+        <item>CLASS 8</item>
+        <item>CLASS 7</item>
+        <item>CLASS 6</item>
+        <item>CLASS 5</item>
+        <item>CLASS 4</item>
+        <item>CLASS 3</item>
+        <item>CLASS 2</item>
+        <item>CLASS 1</item>
+        <item>NURSERY</item>
+        <item>PLAY</item>
+    </string-array>
+
+    <string-array name="preferredClass_array_english_medium">
+        <item><b>CLASS</b></item>
+        <item>A2 LEVEL</item>
+        <item>AS LEVEL</item>
+        <item>O LEVEL</item>
+        <item>CLASS 9</item>
+        <item>CLASS 8</item>
+        <item>CLASS 7</item>
+        <item>CLASS 6</item>
+        <item>CLASS 5</item>
+        <item>CLASS 4</item>
+        <item>CLASS 3</item>
+        <item>CLASS 2</item>
+        <item>CLASS 1</item>
+        <item>KG</item>
+        <item>NURSERY</item>
+        <item>PLAY</item>
+    </string-array>
+
+    <string-array name="group_array">
+        <item><b>GROUP</b></item>
+        <item>Science</item>
+        <item>Commerce</item>
+        <item>Arts</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="primarySubject_array">
+        <item>Bangla</item>
+        <item>General Math</item>
+        <item>English</item>
+        <item>General Science</item>
+        <item>Islamic Studies</item>
+        <item>Bangladesh and Global Studies</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="scienceSubject_array">
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Higher Math</item>
+        <item>Biology</item>
+    </string-array>
+
+    <string-array name="commerceSubject_array">
+        <item>Accounting</item>
+        <item>Economy</item>
+        <item>Finance_Banking_and_Insurance</item>
+        <item>Business_Organization_and_Management</item>
+    </string-array>
+
+    <string-array name="artsSubject_array">
+        <item>History</item>
+        <item>Economy</item>
+        <item>Sociology</item>
+        <item>Geography</item>
+    </string-array>
+
+    <string-array name="daysPerWeekOrMonth_array">
+        <item>Negotiable</item>
+        <item>7 day/week</item>
+        <item>6 day/week</item>
+        <item>5 day/week</item>
+        <item>4 day/week</item>
+        <item>3 day/week</item>
+        <item>2 day/week</item>
+        <item>1 day/week</item>
+    </string-array>
+
+    <string-array name="salary_array">
+        <item><b><font size="11">Negotiable</font></b></item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+        <item>10000</item>
+        <item>11000</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
+        <item>15000</item>
+    </string-array>
+
+    <string-array name="privacy">
+        <item>only me</item>
+        <item>public</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

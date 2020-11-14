@@ -1,0 +1,181 @@
+package com.example.team1min.registration;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.team1min.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+
+public class SignUpActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    private EditText emailEditText, passwordEditText, nameEditText , phoneNumberEditText ;
+    private RelativeLayout signUpLayout, verificationLayout ;
+    private TextView emailTextView2 ;
+
+    private ProgressBar progressBar ;
+    private String nameString, phoneNumberString, emailString, newPasswordString ;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
+
+        mAuth = FirebaseAuth.getInstance() ;
+        emailEditText = findViewById(R.id.email_edit_text) ;
+        passwordEditText = findViewById(R.id.password_edit_text);
+        nameEditText = findViewById(R.id.name_edit_text);
+        phoneNumberEditText = findViewById(R.id.mobile_number_edit_text) ;
+        signUpLayout = findViewById(R.id.sign_up_layout);
+        verificationLayout = findViewById(R.id.verificationLinkLayout) ;
+        emailTextView2 = findViewById(R.id.emailTextView2) ;
+
+    }
+
+
+    public void signUpCompletion(View view){
+        nameString = nameEditText.getText().toString().trim() ;
+        phoneNumberString = phoneNumberEditText.getText().toString().trim() ;
+        emailString = emailEditText.getText().toString().trim() ;
+        newPasswordString = passwordEditText.getText().toString().trim() ;
+
+        if(nameString.equals("")){
+            nameEditText.setError("");
+            return ;
+        }
+        else if(nameString.length()>25){
+            nameEditText.setError("");
+            return;
+        }
+        if(nameString.equals("")){
+            nameEditText.setError("");
+            return ;
+        }
+        else if(nameString.length()>25){
+            nameEditText.setError("");
+            return;
+        }
+
+        if(phoneNumberString.length()<11){
+            phoneNumberEditText.setError("");
+            return ;
+        }
+        else if(phoneNumberString.length()>14){
+            phoneNumberEditText.setError("");
+            return;
+        }
+
+        if(newPasswordString.length() >= 6 && newPasswordString.length() <= 15){
+
+            mAuth.createUserWithEmailAndPassword(emailString, newPasswordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(getApplicationContext(), "User already exist.",  Toast.LENGTH_SHORT).show();
+                    }
+                    else if(task.isSuccessful()){
+                        mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(task1 -> {
+                            if(task1.isSuccessful()){
+                                waitForClickVerificationLink(mAuth.getCurrentUser());
+                            }
+                        }) ;
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "something wrong", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }) ;
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"password length is less than 6 character",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void waitForClickVerificationLink(FirebaseUser user){
+        signUpLayout.setVisibility(View.GONE);
+        verificationLayout.setVisibility(View.VISIBLE);
+        emailTextView2.setText(user.getEmail());
+    }
+
+    public void verificationCompletion(View view){
+        mAuth.getCurrentUser().reload() ;
+        FirebaseUser  firebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid());
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("name",nameString);
+        hashMap.put("phone_number",phoneNumberString);
+        hashMap.put("email",emailString);
+
+        if( mAuth.getCurrentUser() !=null && mAuth.getCurrentUser().isEmailVerified()){
+            //goToBackPageActivity();
+
+            reference.setValue(hashMap);
+
+            Intent intent  = new Intent(this,SignInActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }
+
+    private void goToBackPageActivity() {
+
+    }
+
+    /*public void goToTutorSignUpActivityStep1(){
+        Intent intent = new Intent(this,TutorSignUpActivityStep1.class);
+        intent.putExtra("type","signUp") ;
+        intent.putExtra("tutorName",nameString);
+        intent.putExtra("tutorMobileNumber",phoneNumberString);
+        startActivity(intent);
+        finish();
+    }*/
+
+    public void goToBackPageActivity(View view){
+        Intent intent = new Intent(this, SignInActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void goToSignInWithFacebook(View view){
+        Intent intent = new Intent(this, SignInActivity.class);
+        intent.putExtra("intentFlag", "facebookSignIn") ;
+        startActivity(intent);
+        finish();
+    }
+
+    public void goToSignInWithGoogle(View view){
+        Intent intent = new Intent(this, SignInActivity.class);
+        intent.putExtra("intentFlag", "googleSignIn") ;
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        goToBackPageActivity(null);
+    }
+
+
+
+
+}
